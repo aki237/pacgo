@@ -2,7 +2,6 @@ package pacgo
 
 import (
 	"errors"
-	"fmt"
 	"strings"
 )
 
@@ -25,10 +24,9 @@ func (p *Parser) Parse(content string) (*PkgBuild, error) {
 	for i := 0; i < len(metadata)/3; i++ {
 		key := metadata[i*3]
 		val := metadata[(i*3)+2]
-		fmt.Printf("%s  :  %s\n", key, val)
 		err := pinfo.Set(key, val)
 		if err != nil {
-			fmt.Println(err)
+			return nil, err
 		}
 	}
 	return &PkgBuild{PackageInfo: pinfo, funcs: funcs}, nil
