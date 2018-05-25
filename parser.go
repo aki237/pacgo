@@ -29,7 +29,7 @@ func (p *Parser) Parse(content string) (*PkgBuild, error) {
 			return nil, err
 		}
 	}
-	return &PkgBuild{PackageInfo: pinfo, funcs: funcs}, nil
+	return &PkgBuild{PackageInfo: pinfo, Funcs: funcs}, nil
 }
 
 // separateFuncs is used to separate function token strings from the metadata ones
