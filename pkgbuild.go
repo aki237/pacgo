@@ -5,5 +5,5 @@ package pacgo
 // functions defined in it.
 type PkgBuild struct {
 	*PackageInfo
-	funcs []string
+	Funcs []string
 }
